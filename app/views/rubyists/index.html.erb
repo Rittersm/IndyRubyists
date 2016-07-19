@@ -1,24 +1,27 @@
 <br>
-<ul class="list-inline">
-  <li><%= link_to "Page 1", "/rubyists/index/1" %></li>
-  <li><%= link_to "Page 2", "/rubyists/index/2" %></li>
-  <li><%= link_to "Page 3", "/rubyists/index/3" %></li>
-  <li><%= link_to "Page 4", "/rubyists/index/4" %></li>
-  <li><%= link_to "Page 5", "/rubyists/index/5" %></li>
-  <li><%= link_to "Page 6", "/rubyists/index/6" %></li>
+<ul class="list-inline col-md-offset-5">
+  <% @pages.times do |x| %>
+    <li><%= link_to "Page #{x + 1}", page: x + 1 %></li>
+  <% end %>
 </ul>
+
 <br>
 <ul>
-<% @rubyists.each do |rubyist| %>
-  <li><%= link_to rubyist[:login], rubyist.html_url %></li>
+<% @indy_ruby.each do |rubyist| %>
+  <ul class="list-inline row">
+    <li class="col-md-2"><div class="col-md-5"><%= image_tag rubyist.avatar_url, class: "img-responsive" %></div></li>
+    <li class="col-md-2">Indy Rubyist: <%= link_to rubyist[:login], rubyist.html_url %></li>
+    <li class="col-md-2">Joined GitHub: <%= rubyist.created_at %></li>
+    <li class="col-md-2 col-md-offset-1">Public Repos: <%= link_to rubyist.public_repos, rubyist_path(id: rubyist.login) %></li>
+    <li class="col-md-2">Num of Followers: <%= rubyist.followers %></li>
+  </ul>
+  <hr>
 <% end %>
 </ul>
 <br>
-<ul class="list-inline">
-  <li><%= link_to "Page 1", "/rubyists/index/1" %></li>
-  <li><%= link_to "Page 2", "/rubyists/index/2" %></li>
-  <li><%= link_to "Page 3", "/rubyists/index/3" %></li>
-  <li><%= link_to "Page 4", "/rubyists/index/4" %></li>
-  <li><%= link_to "Page 5", "/rubyists/index/5" %></li>
-  <li><%= link_to "Page 6", "/rubyists/index/6" %></li>
+
+<ul class="list-inline col-md-offset-5">
+  <% @pages.times do |x| %>
+    <li><%= link_to "Page #{x + 1}", page: x + 1 %></li>
+  <% end %>
 </ul>

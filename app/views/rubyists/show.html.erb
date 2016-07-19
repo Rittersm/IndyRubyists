@@ -1,0 +1,9 @@
+<ul>
+  <% @gits.each do |git| %>
+    <ul class="list-inline row">
+      <li>Repository: <%= link_to git.name, git.html_url %></li>
+      <li>
+    </ul>
+    <hr>
+  <% end %>
+</ul>
