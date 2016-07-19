@@ -1,0 +1,24 @@
+<br>
+<ul class="list-inline">
+  <li><%= link_to "Page 1", "/rubyists/index/1" %></li>
+  <li><%= link_to "Page 2", "/rubyists/index/2" %></li>
+  <li><%= link_to "Page 3", "/rubyists/index/3" %></li>
+  <li><%= link_to "Page 4", "/rubyists/index/4" %></li>
+  <li><%= link_to "Page 5", "/rubyists/index/5" %></li>
+  <li><%= link_to "Page 6", "/rubyists/index/6" %></li>
+</ul>
+<br>
+<ul>
+<% @rubyists.each do |rubyist| %>
+  <li><%= link_to rubyist[:login], rubyist.html_url %></li>
+<% end %>
+</ul>
+<br>
+<ul class="list-inline">
+  <li><%= link_to "Page 1", "/rubyists/index/1" %></li>
+  <li><%= link_to "Page 2", "/rubyists/index/2" %></li>
+  <li><%= link_to "Page 3", "/rubyists/index/3" %></li>
+  <li><%= link_to "Page 4", "/rubyists/index/4" %></li>
+  <li><%= link_to "Page 5", "/rubyists/index/5" %></li>
+  <li><%= link_to "Page 6", "/rubyists/index/6" %></li>
+</ul>
