@@ -10,6 +10,8 @@ class RubyistsController < ApplicationController
 
   def show
     client = Octokit::Client.new(:access_token => ENV["octokit_auth"])
-    @gits = client.list_repos("#{params[:id]}")
+    @gits = client.list_repos("#{params[:id]}", page: params[:page], sort: "created_at", direction: "desc")
+    rubyist = Octokit.user(params[:id])
+    @pages = (rubyist[:public_repos] / 30.0).ceil
   end
 end
